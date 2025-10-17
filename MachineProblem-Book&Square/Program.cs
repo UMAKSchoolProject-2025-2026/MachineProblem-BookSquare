@@ -45,48 +45,47 @@ namespace MachineProblem_Book_Square
                 string choice;
                 while (true)
                 {
-                    Console.Write("Do you want to add this book? (y/n) : ");
+                    Console.Write("Do you want to add another book? (y/n) : ");
                     choice = Console.ReadLine().Trim().ToLower();
 
-                    if (choice == "y" || choice == "n")
+                    if (choice == "y")
                     {
+                        break; // continue adding
+                    }
+                    else if (choice == "n")
+                    {
+                        continueAdding = false; // stop adding
                         break;
                     }
                     else
                     {
                         Console.WriteLine("Invalid input. Please enter 'y' or 'n'.");
                     }
-
-                    if (choice == "n")
-                    {
-                        continueAdding = false;
-                    }
                 }
 
-
-
-                Console.WriteLine("----Machine Problem 2 - Square----");
-                Console.WriteLine();
-                Console.WriteLine();
-
-                Console.WriteLine("Method that returns a Class:");
-                Console.WriteLine("--------------------------------------");
-
-                Console.WriteLine("Input the dimensions of the Square (equal length and Width) :");
-                Console.Write("Length: ");
-                int length = int.Parse(Console.ReadLine());
-                Console.Write("Width: ");
-                int width = int.Parse(Console.ReadLine());
-
-
-                Square mySquare = new Square(length, width);
-
-                Console.WriteLine();
-                Console.WriteLine("Perimeter and Area of the square:");
-                mySquare.Display();
-
-                Console.ReadLine();
             }
+
+            Console.WriteLine("----Machine Problem 2 - Square----");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Method that returns a Class:");
+            Console.WriteLine("--------------------------------------");
+
+            Console.WriteLine("Input the dimensions of the Square (equal length and Width) :");
+            Console.Write("Length: ");
+            int length = int.Parse(Console.ReadLine());
+            Console.Write("Width: ");
+            int width = int.Parse(Console.ReadLine());
+
+
+            Square mySquare = new Square(length, width);
+
+            Console.WriteLine();
+            Console.WriteLine("Perimeter and Area of the square:");
+            mySquare.Display();
+
+            Console.ReadLine();
         }
 
     }
